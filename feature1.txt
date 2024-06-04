@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class RectangleCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean continueCalculations = true;
+
+        while (continueCalculations) {
+            System.out.print("Enter the length of the rectangle: ");
+            double length = getPositiveDouble(scanner);
+
+            System.out.print("Enter the width of the rectangle: ");
+            double width = getPositiveDouble(scanner);
+
+            System.out.println("Choose an option:");
+            System.out.println("1. Calculate Area");
+            System.out.println("2. Calculate Perimeter");
+            System.out.println("3. Calculate Both");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    double area = calculateArea(length, width);
+                    System.out.println("The area of the rectangle is: " + area);
+                    break;
+                case 2:
+                    double perimeter = calculatePerimeter(length, width);
+                    System.out.println("The perimeter of the rectangle is: " + perimeter);
+                    break;
+                case 3:
+                    area = calculateArea(length, width);
+                    perimeter = calculatePerimeter(length, width);
+                    System.out.println("The area of the rectangle is: " +
+
